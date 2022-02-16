@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceAndConsumingWithWebForms-2022-B", "WebServiceAndConsumingWithWebForms-2022-B\WebServiceAndConsumingWithWebForms-2022-B.csproj", "{4337B548-BCF1-479D-9AA3-ED97F047E4D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormApplicationForConsumingCalcWebService", "WebFormApplicationForConsumingCalcWebService\WebFormApplicationForConsumingCalcWebService.csproj", "{37ACE369-4356-4692-A7B4-669B8F188600}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4337B548-BCF1-479D-9AA3-ED97F047E4D0} = {4337B548-BCF1-479D-9AA3-ED97F047E4D0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4337B548-BCF1-479D-9AA3-ED97F047E4D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4337B548-BCF1-479D-9AA3-ED97F047E4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4337B548-BCF1-479D-9AA3-ED97F047E4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4337B548-BCF1-479D-9AA3-ED97F047E4D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37ACE369-4356-4692-A7B4-669B8F188600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37ACE369-4356-4692-A7B4-669B8F188600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37ACE369-4356-4692-A7B4-669B8F188600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37ACE369-4356-4692-A7B4-669B8F188600}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24A2B179-4B19-4763-9B62-979954C3BD41}
+	EndGlobalSection
+EndGlobal
