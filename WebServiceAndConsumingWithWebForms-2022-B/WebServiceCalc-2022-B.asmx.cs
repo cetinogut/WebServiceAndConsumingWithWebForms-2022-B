@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 
+
 namespace WebServiceAndConsumingWithWebForms_2022_B
 {
     /// <summary>
@@ -16,7 +17,6 @@ namespace WebServiceAndConsumingWithWebForms_2022_B
     // [System.Web.Script.Services.ScriptService]
     public class WebServiceCalc_2022_B : System.Web.Services.WebService
     {
-
         //[WebMethod]
         //public string HelloWorld()
         //{
@@ -56,11 +56,35 @@ namespace WebServiceAndConsumingWithWebForms_2022_B
                 case "/":
                     result = (double)firstvalue / (double)secondvalue;
                     break;
+
+
             }
 
             //return null;
             return result.ToString();
         }
 
+
+        [WebMethod]
+        public WebServiceResponse Division(int a, int b)
+        {
+            WebServiceResponse response = new WebServiceResponse();
+
+            try
+            {
+                response.Result = Convert.ToString(a / b);
+                response.ErrorMessage = string.Empty;
+            }
+            catch (Exception ex)
+            {
+
+                response.Result = string.Empty;
+                response.ErrorMessage = ex.Message;
+            }
+
+            return response;
+        }
+
     }
+    
 }

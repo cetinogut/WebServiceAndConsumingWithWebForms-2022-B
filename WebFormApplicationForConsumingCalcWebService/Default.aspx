@@ -33,6 +33,7 @@
         </tr>
         <tr>
            <td colspan="3" align="right">
+               <asp:Button ID="btnDivideBy0" runat="server" OnClick="btnDivideBy0_Click" Text="Divide by 0" />
                <asp:Button ID="btnCalculate" runat="server" Text="Calculate" OnClick="btnCalculate_Click"/>
            </td>
         </tr>

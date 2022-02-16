@@ -33,6 +33,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Division">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="a" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="b" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivisionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DivisionResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WebServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -47,6 +68,12 @@
   <wsdl:message name="CalculatorSoapOut">
     <wsdl:part name="parameters" element="tns:CalculatorResponse" />
   </wsdl:message>
+  <wsdl:message name="DivisionSoapIn">
+    <wsdl:part name="parameters" element="tns:Division" />
+  </wsdl:message>
+  <wsdl:message name="DivisionSoapOut">
+    <wsdl:part name="parameters" element="tns:DivisionResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceCalc_2022_BSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -56,6 +83,10 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calc app and parameters int firstvalue, int secondvalue, string operation</wsdl:documentation>
       <wsdl:input message="tns:CalculatorSoapIn" />
       <wsdl:output message="tns:CalculatorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <wsdl:input message="tns:DivisionSoapIn" />
+      <wsdl:output message="tns:DivisionSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceCalc_2022_BSoap" type="tns:WebServiceCalc_2022_BSoap">
@@ -78,6 +109,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Division">
+      <soap:operation soapAction="http://dastugo.com/web_services/Division" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceCalc_2022_BSoap12" type="tns:WebServiceCalc_2022_BSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -92,6 +132,15 @@
     </wsdl:operation>
     <wsdl:operation name="Calculator">
       <soap12:operation soapAction="http://dastugo.com/web_services/Calculator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <soap12:operation soapAction="http://dastugo.com/web_services/Division" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

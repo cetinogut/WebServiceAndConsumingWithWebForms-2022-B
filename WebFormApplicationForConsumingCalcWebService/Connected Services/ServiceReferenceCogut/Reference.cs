@@ -9,7 +9,70 @@
 //------------------------------------------------------------------------------
 
 namespace WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WebServiceResponse", Namespace="http://dastugo.com/web_services/")]
+    [System.SerializableAttribute()]
+    public partial class WebServiceResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ResultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorMessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Result {
+            get {
+                return this.ResultField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResultField, value) != true)) {
+                    this.ResultField = value;
+                    this.RaisePropertyChanged("Result");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string ErrorMessage {
+            get {
+                return this.ErrorMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorMessageField, value) != true)) {
+                    this.ErrorMessageField = value;
+                    this.RaisePropertyChanged("ErrorMessage");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://dastugo.com/web_services/", ConfigurationName="ServiceReferenceCogut.WebServiceCalc_2022_BSoap")]
@@ -28,6 +91,13 @@ namespace WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://dastugo.com/web_services/Calculator", ReplyAction="*")]
         System.Threading.Tasks.Task<WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.CalculatorResponse> CalculatorAsync(WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.CalculatorRequest request);
+        
+        // CODEGEN: Generating message contract since element name DivisionResult from namespace http://dastugo.com/web_services/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://dastugo.com/web_services/Division", ReplyAction="*")]
+        WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionResponse Division(WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://dastugo.com/web_services/Division", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionResponse> DivisionAsync(WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -178,6 +248,78 @@ namespace WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DivisionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Division", Namespace="http://dastugo.com/web_services/", Order=0)]
+        public WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequestBody Body;
+        
+        public DivisionRequest() {
+        }
+        
+        public DivisionRequest(WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://dastugo.com/web_services/")]
+    public partial class DivisionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int a;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int b;
+        
+        public DivisionRequestBody() {
+        }
+        
+        public DivisionRequestBody(int a, int b) {
+            this.a = a;
+            this.b = b;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DivisionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DivisionResponse", Namespace="http://dastugo.com/web_services/", Order=0)]
+        public WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionResponseBody Body;
+        
+        public DivisionResponse() {
+        }
+        
+        public DivisionResponse(WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://dastugo.com/web_services/")]
+    public partial class DivisionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceResponse DivisionResult;
+        
+        public DivisionResponseBody() {
+        }
+        
+        public DivisionResponseBody(WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceResponse DivisionResult) {
+            this.DivisionResult = DivisionResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceCalc_2022_BSoapChannel : WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceCalc_2022_BSoap, System.ServiceModel.IClientChannel {
     }
@@ -259,6 +401,33 @@ namespace WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut {
             inValue.Body.secondvalue = secondvalue;
             inValue.Body.operation = operation;
             return ((WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceCalc_2022_BSoap)(this)).CalculatorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionResponse WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceCalc_2022_BSoap.Division(WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequest request) {
+            return base.Channel.Division(request);
+        }
+        
+        public WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceResponse Division(int a, int b) {
+            WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequest inValue = new WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequest();
+            inValue.Body = new WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.b = b;
+            WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionResponse retVal = ((WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceCalc_2022_BSoap)(this)).Division(inValue);
+            return retVal.Body.DivisionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionResponse> WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceCalc_2022_BSoap.DivisionAsync(WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequest request) {
+            return base.Channel.DivisionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionResponse> DivisionAsync(int a, int b) {
+            WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequest inValue = new WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequest();
+            inValue.Body = new WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.b = b;
+            return ((WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceCalc_2022_BSoap)(this)).DivisionAsync(inValue);
         }
     }
 }

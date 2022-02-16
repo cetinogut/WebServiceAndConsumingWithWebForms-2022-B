@@ -114,6 +114,12 @@
     <Content Include="Connected Services\ServiceReferenceCogut\WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiceReferenceCogut\WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.DivisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReferenceCogut\WebFormApplicationForConsumingCalcWebService.ServiceReferenceCogut.WebServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiceReferenceCogut\WebServiceCalc-2022-B.disco" />
     <None Include="Connected Services\ServiceReferenceCogut\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReferenceCogut\configuration.svcinfo" />
